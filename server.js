@@ -15,9 +15,9 @@ app.use(history());
 const db = require("./config/keys").mongoURI;
 
 //connect to mongodb 网络不稳定，建议搭建本地的mongobd
-// mongoose.connect(db)
-// .then(()=>{console.log("connected to mongodb")})
-// .catch(err=>console.log(err));
+mongoose.connect(db)
+.then(()=>{console.log("connected to mongodb")})
+.catch(err=>console.log(err));
 
 // 将express与vue-crl生成的文件进行配合使用
 console.log(__dirname);//__dirname是获取当前路径
@@ -38,7 +38,7 @@ app.get('/',(req,res)=>{
 
 app.use(users);
 
-const port = process.env.port || 5000;
+const port = process.env.port || 3000;
 
 app.listen(port,()=>{
     console.log(`express server running on port ${port}`);//反引号，字符串模版

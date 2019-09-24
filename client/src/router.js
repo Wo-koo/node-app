@@ -4,16 +4,15 @@ import Index from './views/Index'
 import Register from './views/Register'
 import NotFound from './views/404'
 import Login from './views/Login'
+import Main from './views/Main'
+
+import CategoryList from './views/CategoryList'
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
-    {
-      path: '/',
-      redirect: '/index',
-    },
     {
       path: '/index',
       name: 'index',
@@ -23,6 +22,15 @@ export default new Router({
       path: '/login',
       name: 'longin',
       component: Login
+    },
+    {
+      path: '/',
+      name: 'main',
+      component: Main,
+      children: [
+        {path: '/categories/list',component: CategoryList},
+
+      ]
     },
     {
       path: '/register',

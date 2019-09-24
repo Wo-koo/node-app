@@ -34,7 +34,7 @@ router.post('/register',(req,res)=>{
 // route POST api/users/login
 // @dec 返回token jwt passport
 // @access public
-router.post('/login',(req,res)=>{
+router.post('/client/login',(req,res)=>{
     console.log(req.body);
     //查询数据库中是否有对应的邮箱
     User.findOne({email:req.body.email})

@@ -17,16 +17,16 @@
               Email Address
               <span class="req">*</span>
             </label>
-            <input type="email" required="off" @blur="blured" @focus="focused"/>
+            <input type="email" required="off" @blur="blured" @focus="focused" v-model="model.email"/>
           </div>
           <div class="field-wrap">
             <label>
               Password
               <span class="req">*</span>
             </label>
-            <input type="password" @blur="blured" @focus="focused"/>
+            <input type="password" @blur="blured" @focus="focused" v-model="model.password"/>
           </div>
-          <button>LOG IN</button>
+          <button type="submit" @click.prevent="logIn">LOG IN</button>
         </form>
       </div>
       <div id="signup" v-bind:hidden="!signUpTabIsActived">
@@ -52,19 +52,21 @@
           </label>
           <input type="text" @blur="blured" @focus="focused"/>
         </div>
-        <button>GET STARTED</button>
+        <button @click="regist">GET STARTED</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
     name: "login",
     data:function(){
         return{
             loginTabIsActived: true,
             signUpTabIsActived: false,
+            model:{},
         };
     },
     components: {},
@@ -88,7 +90,19 @@ export default {
            if(el.value == el.defaultValue){
                el.parentNode.firstChild.className = null;
            }
-      }
+      },
+      logIn(){
+        // to do
+        this.$http.post('/login',this.model).then(
+          this.$message({
+            type: 'success',
+            message: 'login success'
+          })
+        );       
+      },
+      regist: function(){
+        // to do
+      },
   },
 };
 </script>
