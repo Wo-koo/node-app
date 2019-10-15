@@ -4,9 +4,10 @@ import Index from './views/Index'
 import Register from './views/Register'
 import NotFound from './views/404'
 import Login from './views/Login'
-import Main from './views/Main'
+import Main from './views/Main.vue'
 
-import CategoryList from './views/CategoryList'
+import CategoryList from './views/CategoryList.vue'
+import CategoryCreate from './views/CategoryCreate.vue'
 
 Vue.use(Router)
 
@@ -29,7 +30,7 @@ export default new Router({
       component: Main,
       children: [
         {path: '/categories/list',component: CategoryList},
-
+        {path: '/categories/create',component: CategoryCreate},
       ]
     },
     {

@@ -8,7 +8,7 @@ const history = require('connect-history-api-fallback');
 
 const app = express();
 const users = require("./routes/api/users");
-
+const categories = require('./routes/api/categories');
 app.use(history());
 
 //db config
@@ -37,6 +37,7 @@ app.get('/',(req,res)=>{
 });
 
 app.use(users);
+app.use(categories);
 
 const port = process.env.port || 3000;
 

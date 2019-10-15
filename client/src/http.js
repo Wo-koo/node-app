@@ -3,8 +3,7 @@ import axios from "axios";
 // import router from './router';
 
 const http = axios.create({
-    baseURL: process.env.VUE_APP_API_URL || 'client',
-    // baseURL: 'http://localhost:3000/admin/api'
+    baseURL: process.env.VUE_APP_API_URL || '/client',
 })
 
 export default http
