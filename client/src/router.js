@@ -30,6 +30,7 @@ export default new Router({
       component: Main,
       children: [
         {path: '/categories/list',component: CategoryList},
+        {path: '/categories/create/:id',component:CategoryCreate,props:true},
         {path: '/categories/create',component: CategoryCreate},
       ]
     },

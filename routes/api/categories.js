@@ -25,4 +25,9 @@ router.get('/client/category/list',async (req,res)=>{
     res.json(categories);
 });
 
+router.get('/client/category/:id',async (req,res)=>{
+    let category = await Category.findById(req.params.id);
+    res.json(category);
+});
+
 module.exports = router; 
