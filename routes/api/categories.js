@@ -30,4 +30,10 @@ router.get('/client/category/:id',async (req,res)=>{
     res.json(category);
 });
 
+router.delete('/client/category/:id',async (req,res)=>{
+    console.log("接收到删除信息");
+    await Category.findByIdAndDelete(req.params.id);
+    res.status(200).json({msg:"删除成功"});
+});
+
 module.exports = router; 

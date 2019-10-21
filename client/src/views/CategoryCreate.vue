@@ -63,10 +63,6 @@ export default {
     async fetchParent(){
       let res = await this.$http.get('category/list');
       this.parentOptions = res.data;
-      this.$message({
-        type:"infor",
-        message: this.parentOptions,
-      })
     },
   },
 
