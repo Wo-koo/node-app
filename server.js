@@ -9,6 +9,9 @@ const history = require('connect-history-api-fallback');
 const app = express();
 const users = require("./routes/api/users");
 const categories = require('./routes/api/categories');
+const equipments = require('./routes/api/equipments');
+const imgUpload = require('./routes/api/imgUpload');
+
 app.use(history());
 
 //db config
@@ -38,6 +41,8 @@ app.get('/',(req,res)=>{
 
 app.use(users);
 app.use(categories);
+app.use(equipments);
+app.use(imgUpload);
 
 const port = process.env.port || 3000;
 
