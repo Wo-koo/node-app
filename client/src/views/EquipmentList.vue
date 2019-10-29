@@ -4,9 +4,9 @@
     <el-table :data="items" stripe>
       <el-table-column prop="_id" label="ID" width="180"></el-table-column>
       <el-table-column prop="name" label="装备名称"></el-table-column>
-      <el-table-column prop="icon" label="装备图标">
+      <el-table-column prop="orginalImgName" label="装备图标">
         <template slot-scope="scope">
-          <img :src="scope.row.icon" style="height:3rem;"/>
+          <img :src=' "/client/images/" + scope.row.orginalImgName' style="height:3rem;"/>
         </template>
       </el-table-column>
       <el-table-column label="操作" width="100">

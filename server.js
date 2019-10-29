@@ -11,6 +11,7 @@ const users = require("./routes/api/users");
 const categories = require('./routes/api/categories');
 const equipments = require('./routes/api/equipments');
 const imgUpload = require('./routes/api/imgUpload');
+const images = require("./routes/api/images");
 
 app.use(history());
 
@@ -43,6 +44,7 @@ app.use(users);
 app.use(categories);
 app.use(equipments);
 app.use(imgUpload);
+app.use(images);
 
 const port = process.env.port || 3000;
 

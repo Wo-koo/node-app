@@ -8,10 +8,10 @@ const EquipmentSchema = new Schema({
         type:String,
         required:true,
     },
-    icon:{
+    orginalImgName:{
         type:String,
         required:true,
-    }
+    },
 })
 
 module.exports = Equipment = mongoose.model("Equipment",EquipmentSchema);

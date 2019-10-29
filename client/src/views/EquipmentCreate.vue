@@ -33,7 +33,8 @@ export default {
     return {
       formModel: {
         name: "",
-        icon: ""
+        icon: "",
+        orginalImgName:"",
       },
       value: {},
       parentOptions: []
@@ -41,13 +42,13 @@ export default {
   },
 
   methods: {
-    handleAvatarSuccess(res,file){
-      this.$message({
-        type:"info",
-        message:res,
-      })
-      
+    handleAvatarSuccess(res,file){  
       this.formModel.icon = URL.createObjectURL(file.raw);
+            this.$message({
+        type: "success",
+        message: file,
+      });
+      this.formModel.orginalImgName = file.response.originalname;
     },
 
     async submitForm() {

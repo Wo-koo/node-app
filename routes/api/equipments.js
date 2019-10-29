@@ -10,7 +10,7 @@ router.post('/client/equipment/add',(req,res)=>{
         }else{
             let newEquipment = new Equipment({
                 name:req.body.name,
-                icon:req.body.icon,
+                orginalImgName:req.body.orginalImgName,
             });
 
             newEquipment.save()
