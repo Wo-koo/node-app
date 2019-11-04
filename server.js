@@ -12,6 +12,7 @@ const categories = require('./routes/api/categories');
 const equipments = require('./routes/api/equipments');
 const imgUpload = require('./routes/api/imgUpload');
 const images = require("./routes/api/images");
+const heros = require("./routes/api/heros");
 
 app.use(history());
 
@@ -45,6 +46,7 @@ app.use(categories);
 app.use(equipments);
 app.use(imgUpload);
 app.use(images);
+app.use(heros);
 
 const port = process.env.port || 3000;
 

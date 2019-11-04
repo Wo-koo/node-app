@@ -12,6 +12,9 @@ import CategoryCreate from './views/CategoryCreate.vue'
 import EquipmentList from './views/EquipmentList.vue';
 import EquipmentCreate from './views/EquipmentCreate.vue';
 
+import HeroCreate from './views/HeroCreate.vue';
+import HeroList from './views/HeroList.vue';
+
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +42,9 @@ export default new Router({
         {path: '/equipments/list',component: EquipmentList},
         {path: '/equipments/create/:id',component:EquipmentCreate,props:true},
         {path: '/equipments/create',component: EquipmentCreate},
+
+        {path: '/heros/create',component: HeroCreate},
+        {path: '/heros/list',component: HeroList},
       ]
     },
     {

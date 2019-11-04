@@ -1,6 +1,6 @@
 module.exports = modelInflection => {return async(req,res,next) =>{
     let modelName = require('inflection').classify(req.params.resource);
-    res.model = require(`../models/${modelName}`);
+    req.model = require(`../models/${modelName}`);
     next();
 }};
 
