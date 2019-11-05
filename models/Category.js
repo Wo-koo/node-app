@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const CategorySchema = new Schema({
     parentName:{
         type:String,
-        required:true,
+        required:false,
     },
     name:{
         type:String,

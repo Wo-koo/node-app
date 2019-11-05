@@ -12,11 +12,14 @@ router.post('/client/hero/add',(req,res)=>{
         if(hero){
             return res.status(400).json({name:req.body.name,msg:"相同的英雄已经被创建"})
         }else{
-            // let hero = new Hero({...req.model});
             // console.log(`hero = ${hero}`);
-            req.model.save()
-            .then(()=>res.status(200).json({msg:"新建英雄成功"}))
-            .catch(err=>res.status(400).json({msg:err})); 
+            req.model.create(req.body,(err,newHero)=>{
+                if(err){
+                    res.status(400).json({msg:err});
+                }else{
+                    res.status(200).json({msg:"新英雄创建成功"});
+                }
+            });
         }
     })
 })
