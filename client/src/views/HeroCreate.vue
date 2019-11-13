@@ -106,7 +106,7 @@
                 class="avatar-uploader"
                 :action="$http.defaults.baseURL + '/imgupload'"
                 :show-file-list="false"
-                :on-success="res=>{skill.icon = res.url}"
+                :on-success="(res,file)=>$set(skill, 'icon',  ('/client/images/' + file.response.originalname))"
               >
                 <img v-if="skill.icon" :src="skill.icon" class="avatar" />
                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
@@ -166,7 +166,7 @@ export default {
       this.formModel.icon = URL.createObjectURL(file.raw);
       this.$message({
         type: "success",
-        message: file
+        message: res,
       });
       this.formModel.orginalImgName = file.response.originalname;
     },
